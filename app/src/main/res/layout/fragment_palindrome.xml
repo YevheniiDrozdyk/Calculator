@@ -11,21 +11,19 @@
         android:text="@string/text_enter_number"/>
 
     <EditText
-        android:id="@+id/editNumber"
+        android:id="@+id/editNumberPalindrome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="number"
-        android:ems="10"
-        />
+        android:ems="10"/>
 
     <Button
-        android:id="@+id/btnCalculate"
+        android:id="@+id/btnCalculatePalindrome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:text="@string/button_calculate"
-        android:textAllCaps="true"
-        />
+        android:textAllCaps="true"/>
 
     <TextView
         android:id="@+id/textAnswer"

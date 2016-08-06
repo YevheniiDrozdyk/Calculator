@@ -34,10 +34,16 @@ public class FactorialFragment extends Fragment {
         calculateFact.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                putNumber = Integer.parseInt(editNumberFact.getText().toString());
-                factorial = new Factorial(putNumber);
-                answer = factorial.getAnswer();
-                textAnswer.setText(answer+"");
+                if(editNumberFact.getText().toString().matches("0^")) {
+
+                }
+                else {
+                    putNumber = Integer.parseInt(editNumberFact.getText().toString());
+                    factorial = new Factorial(putNumber);
+                    answer = factorial.getAnswer();
+                    textAnswer.setText(answer+"");
+                }
+
             }
         });
 
