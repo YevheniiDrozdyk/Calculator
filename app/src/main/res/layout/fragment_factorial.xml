@@ -29,7 +29,6 @@
         android:id="@+id/textAnswer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="Answer"/>
+        android:layout_gravity="center_horizontal"/>
 
 </LinearLayout>

@@ -12,8 +12,8 @@ import android.widget.TextView;
 import com.indev.calculator.R;
 import com.indev.calculator.math.Palindrome;
 
-public class PalindromeFragment extends Fragment
-{
+public class PalindromeFragment extends Fragment {
+
     private Button calculatePalindrome;
     private EditText editNumberPalindrome;
     private TextView textAnswer;
@@ -22,8 +22,7 @@ public class PalindromeFragment extends Fragment
     private String answer;
 
     @Override
-    public View onCreateView(LayoutInflater inflater,ViewGroup container,Bundle savedInstanceState)
-    {
+    public View onCreateView(LayoutInflater inflater,ViewGroup container,Bundle savedInstanceState) {
         View palindromeView = inflater.inflate(R.layout.fragment_palindrome, container, false);
         editNumberPalindrome = (EditText) palindromeView.findViewById(R.id.editNumberPalindrome);
         textAnswer = (TextView) palindromeView.findViewById(R.id.textAnswer);
