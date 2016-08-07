@@ -51,13 +51,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <Button
-            android:id="@+id/btnFaceBook"
+        <com.facebook.login.widget.LoginButton
+            android:id="@+id/btnFacebook"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:onClick="onFaceBookClick"
-            android:text="@string/login_facebook"/>
+            android:layout_weight="1"/>
 
         <View
             android:layout_width="1dp"
@@ -92,5 +90,8 @@
         android:layout_height="wrap_content"
         android:onClick="onRegistrationClick"
         android:text="@string/button_reg"/>
+
+
+
 
 </LinearLayout>

@@ -4,4 +4,8 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
 
     <dimen name="activity_padding">50dp</dimen>
+
+    <dimen name="app_start_text_size">40sp</dimen>
+    <dimen name="app_recovery_text_size">18sp</dimen>
+    <dimen name="facebook_button_text_size">16sp</dimen>
 </resources>

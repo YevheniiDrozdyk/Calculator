@@ -9,17 +9,19 @@
         <item name="windowActionBar">false</item>
         <item name="android:textAllCaps">false</item>
     </style>
-
     <style name="AppStartText">
-        <item name="android:textSize">40sp</item>
-        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">@dimen/app_start_text_size</item>
+        <item name="android:textColor">@color/colorWhite</item>
         <item name="android:textStyle">bold</item>
     </style>
     <style name="AppRecoveryText">
-        <item name="android:textSize">18sp</item>
-        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">@dimen/app_recovery_text_size</item>
+        <item name="android:textColor">@color/colorWhite</item>
         <item name="android:textStyle">bold</item>
         <item name="android:gravity">center</item>
+    </style>
+    <style name="FacebookLoginButton">
+        <item name="android:textSize">@dimen/facebook_button_text_size</item>
     </style>
 
 </resources>
