@@ -12,5 +12,8 @@
     <string name="button_calculate">Calculate</string>
     <string name="hint_login">Login</string>
     <string name="hint_pass">Password</string>
+    <string name="hint_email">Email</string>
     <string name="facebook_app_id">625165670980267</string>
+
+    <string name="sign_out">Login with\nGoogle</string>
 </resources>

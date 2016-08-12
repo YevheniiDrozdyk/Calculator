@@ -6,6 +6,10 @@
     <dimen name="activity_padding">50dp</dimen>
 
     <dimen name="app_start_text_size">40sp</dimen>
-    <dimen name="app_recovery_text_size">18sp</dimen>
-    <dimen name="facebook_button_text_size">16sp</dimen>
+    <dimen name="app_recovery_text_size">16sp</dimen>
+    <dimen name="main_button_text_size">15sp</dimen>
+    <dimen name="edit_text_padding_left">25dp</dimen>
+    <dimen name="edit_text_drawable_padding">15dp</dimen>
+    <dimen name="edit_text_size_text">14sp</dimen>
+
 </resources>

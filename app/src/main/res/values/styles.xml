@@ -1,5 +1,4 @@
 <resources>
-
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
@@ -21,7 +20,37 @@
         <item name="android:gravity">center</item>
     </style>
     <style name="FacebookLoginButton">
-        <item name="android:textSize">@dimen/facebook_button_text_size</item>
+
+    </style>
+
+    <style name="AppMainButton">
+        <item name="android:background">@color/colorTransparent</item>
+        <item name="android:textColor">@color/selector_button_text</item>
+        <item name="android:textSize">@dimen/main_button_text_size</item>
+        <item name="android:alpha">0.8</item>
+    </style>
+
+    <style name="AppEditText" parent="android:Widget.EditText">
+        <item name="colorControlActivated">@color/colorAccent</item>
+        <item name="colorControlNormal">@color/colorLightGrey</item>
+        <item name="android:paddingLeft">@dimen/edit_text_padding_left</item>
+        <item name="android:drawablePadding">@dimen/edit_text_drawable_padding</item>
+        <item name="android:textColorHint">@color/colorLightGrey</item>
+        <item name="android:alpha">0.9</item>
+        <item name="android:textSize">@dimen/edit_text_size_text</item>
+    </style>
+
+    <style name="RecoveryEditText">
+        <item name="colorControlActivated">@color/colorAccent</item>
+        <item name="colorControlNormal">@color/colorLightGrey</item>
+        <item name="android:drawablePadding">@dimen/edit_text_drawable_padding</item>
+        <item name="android:textColorHint">@color/colorWhite</item>
+    </style>
+
+    <style name="AppButtonSend">
+        <item name="android:textAllCaps">true</item>
+        <item name="android:background">@drawable/shape_button_send</item>
+        <item name="android:textColor">@color/colorWhite</item>
     </style>
 
 </resources>

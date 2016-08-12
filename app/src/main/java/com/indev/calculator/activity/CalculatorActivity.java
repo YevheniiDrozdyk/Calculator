@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 
 import com.indev.calculator.R;
 import com.indev.calculator.adapter.ViewPagerAdapter;
@@ -26,13 +27,17 @@ public class CalculatorActivity extends AppCompatActivity {
     private final CharSequence[] NAME_OF_TAB = {"Palindrome", "Factorial", "Pairs"};
     private final int AMOUNT_OF_TABS = 3;
 
+    private String userName;
+
+    private static final String TAG="myLogs";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calculator);
         setToolbar();
         setSlidingTabs();
-
+        Log.d(TAG, getUserName());
     }
 
     private void setToolbar() {
@@ -66,5 +71,10 @@ public class CalculatorActivity extends AppCompatActivity {
 
         //Setting the ViewPager For the SlidingTabsLayout
         tabs.setViewPager(viewPager);
+    }
+
+    private String getUserName() {
+        userName = getIntent().getStringExtra("userName");
+        return userName;
     }
 }
