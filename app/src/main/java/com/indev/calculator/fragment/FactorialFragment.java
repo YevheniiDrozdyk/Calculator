@@ -2,15 +2,12 @@ package com.indev.calculator.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.indev.calculator.R;
 import com.indev.calculator.math.Factorial;
@@ -34,16 +31,12 @@ public class FactorialFragment extends Fragment {
         calculateFact.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(editNumberFact.getText().toString().matches("0^")) {
-
-                }
-                else {
+                if (!editNumberFact.getText().toString().equals("")) {
                     putNumber = Integer.parseInt(editNumberFact.getText().toString());
                     factorial = new Factorial(putNumber);
                     answer = factorial.getAnswer();
-                    textAnswer.setText(answer+"");
+                    textAnswer.setText(answer + "");
                 }
-
             }
         });
 

@@ -1,75 +1,76 @@
 package com.indev.calculator.math;
 
-import android.util.Log;
-
 import java.util.ArrayList;
 
 public class Pairs {
 
     private String inputPairs;
+
     private ArrayList<Integer> pair = new ArrayList<>();
-    public final String TAG = "myLogs";
+    private ArrayList<Integer> firstIndexOfPair = new ArrayList<>();
+    private ArrayList<Integer> secondIndexOfPair = new ArrayList<>();
+
+    private final int RESPONSE_CODE_LUCK = 1;
+    private final int RESPONSE_CODE_FAIL = 0;
+
+    private final int FIRST_INDEX_OF_PAIR = 0;
+    private final int SECOND_INDEX_OF_PAIR = 1;
+
+    private int ascIndex = 0; // Variable for finding index of max sub-list in ascending order
+    private int descIndex = 0; // Variable for finding index of max sub-list in descending order
+    private int ascSizeOfSubList = 0; // Variable for finding length of max sub-list in ascending order
+    private int descSizeOfSubList = 0; // Variable for finding length of max sub-list in descending order
 
     public Pairs(String inputPairs) {
         this.inputPairs = inputPairs;
     }
 
-    public void strToArray() {
-        String [] splitPairs = inputPairs.split(" ");
-        for(int i=0; i<splitPairs.length; i++) {
-            pair.add(Integer.parseInt(splitPairs[i]));
-        }
-    }
-
-
-
-
-
-    private static final int[][] INPUT_DATES = {{1, 4},
-            {2, 5},
-            {7, 3},
-            {4, 6},
-            {7, 7}};
-
-    private static int ascIndex = 0; // Variable for finding index of max sub-list in ascending order
-    private static int descIndex = 0; // Variable for finding index of max sub-list in descending order
-    private static int ascSizeOfSubList = 0; // Variable for finding length of max sub-list in ascending order
-    private static int descSizeOfSubList = 0; // Variable for finding length of max sub-list in descending order
-
-    public static void main(String[] args) {
-
-        for (int i = 0; i < INPUT_DATES.length; i++) {
-
-            for (int j = 0; j < INPUT_DATES[i].length - 1; j++) {
-
-                if (INPUT_DATES[i][j] < INPUT_DATES[i][j + 1]) {
-
-                    int tmpSize = INPUT_DATES[i][j + 1] - INPUT_DATES[i][j] + 1;
-
-                    if (tmpSize >= ascSizeOfSubList) {
-
-                        ascSizeOfSubList = tmpSize;
-                        ascIndex = i;
-                        break;
-                    }
-
-                } else {
-
-                    int tmpSize = INPUT_DATES[i][j] - INPUT_DATES[i][j + 1] + 1;
-
-                    if (tmpSize >= descSizeOfSubList) {
-                        descSizeOfSubList = tmpSize;
-                        descIndex = i;
-                        break;
-                    }
-
-                }
-
+    public int checkInputPairs() {
+        String[] splitPairs = inputPairs.split(" ");
+        for (int i = 0; i < splitPairs.length; i++) {
+            try {
+                pair.add(Integer.parseInt(splitPairs[i]));
+            } catch (NumberFormatException e) {
+                return RESPONSE_CODE_FAIL;
             }
-
         }
 
-        System.out.println("Ascending order: " + INPUT_DATES[ascIndex][0] + "," + INPUT_DATES[ascIndex][1]);
-        System.out.println("Descending order: " + INPUT_DATES[descIndex][0] + "," + INPUT_DATES[descIndex][1]);
+        return RESPONSE_CODE_LUCK;
     }
+
+    private void convertPairs() {
+        int i = 0, j = 0;
+        for (int onePair : pair) {
+            if (String.valueOf(onePair).length() == 2) {
+                char firstIndex = String.valueOf(onePair).charAt(FIRST_INDEX_OF_PAIR);
+                firstIndexOfPair.add(Integer.parseInt(firstIndex + ""));
+                char secondIndex = String.valueOf(onePair).charAt(SECOND_INDEX_OF_PAIR);
+                secondIndexOfPair.add(Integer.parseInt(secondIndex + ""));
+            }
+        }
+    }
+
+    public String getAnswer() {
+        convertPairs();
+
+        for (int i = 0; i < firstIndexOfPair.size(); i++) {
+            if (firstIndexOfPair.get(i) < secondIndexOfPair.get(i)) {
+                int tmpSize = secondIndexOfPair.get(i) - firstIndexOfPair.get(i) + 1;
+                if (tmpSize >= ascSizeOfSubList) {
+                    ascSizeOfSubList = tmpSize;
+                    ascIndex = i;
+                }
+            } else {
+                int tmpSize = firstIndexOfPair.get(i) - secondIndexOfPair.get(i) + 1;
+                if (tmpSize >= descSizeOfSubList) {
+                    descSizeOfSubList = tmpSize;
+                    descIndex = i;
+                }
+            }
+        }
+
+        return "Ascending order: " + firstIndexOfPair.get(ascIndex) + " " + secondIndexOfPair.get(ascIndex) + ";"
+                + " Descending order: " + firstIndexOfPair.get(descIndex) + " " + secondIndexOfPair.get(descIndex) + ";";
+    }
+
 }

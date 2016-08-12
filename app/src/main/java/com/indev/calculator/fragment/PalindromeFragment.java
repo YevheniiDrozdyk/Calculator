@@ -22,7 +22,7 @@ public class PalindromeFragment extends Fragment {
     private String answer;
 
     @Override
-    public View onCreateView(LayoutInflater inflater,ViewGroup container,Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View palindromeView = inflater.inflate(R.layout.fragment_palindrome, container, false);
         editNumberPalindrome = (EditText) palindromeView.findViewById(R.id.editNumberPalindrome);
         textAnswer = (TextView) palindromeView.findViewById(R.id.textAnswer);
@@ -30,12 +30,13 @@ public class PalindromeFragment extends Fragment {
         calculatePalindrome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                putNumber = Integer.parseInt(editNumberPalindrome.getText().toString());
-                palindrome = new Palindrome(putNumber);
-                answer = palindrome.getAnswer();
-                textAnswer.setText(answer);
+                if (!editNumberPalindrome.getText().toString().equals("")) {
+                    putNumber = Integer.parseInt(editNumberPalindrome.getText().toString());
+                    palindrome = new Palindrome(putNumber);
+                    answer = palindrome.getAnswer();
+                    textAnswer.setText(answer);
+                }
             }
-
         });
 
         return palindromeView;

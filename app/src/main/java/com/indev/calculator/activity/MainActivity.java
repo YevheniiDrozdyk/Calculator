@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
     private String userName;
     private String userPassword;
 
-    private final String ERROR_CONNECTION = "You have some error with Internet connection!";
+    private final String ERROR_CONNECTION = "You have some problem with Internet connection!";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
