@@ -21,17 +21,17 @@
         android:inputType="textEmailAddress"
         android:ems="10"
         android:maxLength="254"
-        style="@style/RecoveryEditText"
         android:textColor="@color/colorWhite"
         android:drawableLeft="@drawable/ic_mail_outline_white_24dp"
-        android:hint="@string/hint_email"/>
+        android:hint="@string/hint_email"
+        style="@style/RecoveryEditText"/>
 
     <Button
         android:id="@+id/btnEmailSend"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="onSendClick"
         android:text="@string/button_send"
-        style="@style/AppButtonSend" />
-
+        style="@style/AppButtonSend"/>
 
 </LinearLayout>

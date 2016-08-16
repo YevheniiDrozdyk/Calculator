@@ -31,6 +31,7 @@ public class FactorialFragment extends Fragment {
         calculateFact.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                textAnswer.setText("");
                 if (!editNumberFact.getText().toString().equals("")) {
                     putNumber = Integer.parseInt(editNumberFact.getText().toString());
                     factorial = new Factorial(putNumber);

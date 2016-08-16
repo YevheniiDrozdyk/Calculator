@@ -107,7 +107,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
             intent.putExtra("userName", userName);
             startActivity(intent);
         } else {
-            Toast.makeText(getApplicationContext(),"Please, write you login and password", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Please, fill out the input fields", Toast.LENGTH_LONG).show();
         }
 
     }

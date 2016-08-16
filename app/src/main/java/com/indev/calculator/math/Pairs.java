@@ -38,39 +38,43 @@ public class Pairs {
         return RESPONSE_CODE_LUCK;
     }
 
-    private void convertPairs() {
-        int i = 0, j = 0;
+    private boolean convertPairs() {
+        boolean twoDigitNumber = false;
         for (int onePair : pair) {
             if (String.valueOf(onePair).length() == 2) {
+                twoDigitNumber = true;
                 char firstIndex = String.valueOf(onePair).charAt(FIRST_INDEX_OF_PAIR);
                 firstIndexOfPair.add(Integer.parseInt(firstIndex + ""));
                 char secondIndex = String.valueOf(onePair).charAt(SECOND_INDEX_OF_PAIR);
                 secondIndexOfPair.add(Integer.parseInt(secondIndex + ""));
             }
         }
+        return twoDigitNumber;
     }
 
     public String getAnswer() {
-        convertPairs();
-
-        for (int i = 0; i < firstIndexOfPair.size(); i++) {
-            if (firstIndexOfPair.get(i) < secondIndexOfPair.get(i)) {
-                int tmpSize = secondIndexOfPair.get(i) - firstIndexOfPair.get(i) + 1;
-                if (tmpSize >= ascSizeOfSubList) {
-                    ascSizeOfSubList = tmpSize;
-                    ascIndex = i;
-                }
-            } else {
-                int tmpSize = firstIndexOfPair.get(i) - secondIndexOfPair.get(i) + 1;
-                if (tmpSize >= descSizeOfSubList) {
-                    descSizeOfSubList = tmpSize;
-                    descIndex = i;
+        String answer = "";
+        if (convertPairs()) {
+            for (int i = 0; i < firstIndexOfPair.size(); i++) {
+                if (firstIndexOfPair.get(i) < secondIndexOfPair.get(i)) {
+                    int tmpSize = secondIndexOfPair.get(i) - firstIndexOfPair.get(i) + 1;
+                    if (tmpSize >= ascSizeOfSubList) {
+                        ascSizeOfSubList = tmpSize;
+                        ascIndex = i;
+                    }
+                } else {
+                    int tmpSize = firstIndexOfPair.get(i) - secondIndexOfPair.get(i) + 1;
+                    if (tmpSize >= descSizeOfSubList) {
+                        descSizeOfSubList = tmpSize;
+                        descIndex = i;
+                    }
                 }
             }
+            answer = "Ascending order: (" + firstIndexOfPair.get(ascIndex) + "," + secondIndexOfPair.get(ascIndex) + ");"
+                    + " Descending order: (" + firstIndexOfPair.get(descIndex) + "," + secondIndexOfPair.get(descIndex) + ").";
         }
 
-        return "Ascending order: " + firstIndexOfPair.get(ascIndex) + " " + secondIndexOfPair.get(ascIndex) + ";"
-                + " Descending order: " + firstIndexOfPair.get(descIndex) + " " + secondIndexOfPair.get(descIndex) + ";";
+        return answer;
     }
 
 }

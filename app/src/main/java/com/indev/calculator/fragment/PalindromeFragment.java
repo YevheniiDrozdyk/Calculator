@@ -30,6 +30,7 @@ public class PalindromeFragment extends Fragment {
         calculatePalindrome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                textAnswer.setText("");
                 if (!editNumberPalindrome.getText().toString().equals("")) {
                     putNumber = Integer.parseInt(editNumberPalindrome.getText().toString());
                     palindrome = new Palindrome(putNumber);
