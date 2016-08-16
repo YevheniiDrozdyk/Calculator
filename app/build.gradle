@@ -19,8 +19,16 @@ android {
     compileSdkVersion 23
     buildToolsVersion "23.0.3"
 
+    packagingOptions {
+        pickFirst 'META-INF/LICENSE.txt' // picks the JavaMail license file
+    }
+
     repositories {
         mavenCentral()
+        jcenter()
+        maven {
+            url "https://maven.java.net/content/groups/public/"
+        }
     }
 
     defaultConfig {
@@ -47,4 +55,8 @@ dependencies {
         transitive = true;
     }
     compile 'com.google.android.gms:play-services-plus:9.2.0'
+
+
+    compile 'com.sun.mail:android-mail:1.5.5'
+    compile 'com.sun.mail:android-activation:1.5.5'
 }
