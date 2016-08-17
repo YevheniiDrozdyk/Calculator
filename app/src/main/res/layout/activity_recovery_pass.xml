@@ -24,7 +24,9 @@
         android:textColor="@color/colorWhite"
         android:drawableLeft="@drawable/ic_mail_outline_white_24dp"
         android:hint="@string/hint_email"
-        style="@style/RecoveryEditText"/>
+        style="@style/RecoveryEditText"
+        android:layout_marginTop="@dimen/edit_email_margin_top"
+        android:layout_marginBottom="@dimen/edit_email_margin_bottom"/>
 
     <Button
         android:id="@+id/btnEmailSend"
