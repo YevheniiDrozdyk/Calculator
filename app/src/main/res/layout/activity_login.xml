@@ -13,7 +13,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/app_name"
-        style="@style/AppStartText"/>
+        style="@style/AppStartText"
+        android:layout_marginBottom="@dimen/app_text_margin_bottom"/>
 
     <EditText
         android:id="@+id/editLogin"
@@ -52,7 +53,53 @@
         android:layout_height="wrap_content"
         android:onClick="onSendClick"
         android:text="@string/button_send"
-        style="@style/AppButtonSend"/>
+        style="@style/AppButtonSend"
+        android:layout_marginTop="@dimen/button_sent_margin_top"
+        android:layout_marginBottom="@dimen/button_sent_margin_bottom"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btnFacebook"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/login_facebook"
+            android:onClick="onFacebookClick"
+            android:drawableTop="@drawable/selector_login_facebook"
+            style="@style/AppMainButton"
+            android:textSize="@dimen/login_button_text_size"/>
+
+        <View style="@style/AppButtonDivider" />
+
+        <Button
+            android:id="@+id/btnGoogle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/login_google"
+            android:onClick="onGoogleClick"
+            android:drawableTop="@drawable/selector_login_google"
+            style="@style/AppMainButton"
+            android:textSize="@dimen/login_button_text_size"/>
+
+        <View style="@style/AppButtonDivider"/>
+
+        <Button
+            android:id="@+id/btnTwitter"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/login_twitter"
+            android:onClick="onTwitterClick"
+            android:drawableTop="@drawable/selector_login_twitter"
+            style="@style/AppMainButton"
+            android:textSize="@dimen/login_button_text_size"/>
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/btnReg"
@@ -60,33 +107,7 @@
         android:layout_height="wrap_content"
         android:onClick="onRegistrationClick"
         android:text="@string/button_reg"
-        style="@style/AppMainButton"/>
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:visibility="visible">
-
-        <com.facebook.login.widget.LoginButton
-            android:id="@+id/facebook_login_button"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"/>
-
-        <com.google.android.gms.common.SignInButton
-            android:id="@+id/google_login_button"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"/>
-
-        <com.twitter.sdk.android.core.identity.TwitterLoginButton
-            android:id="@+id/twitter_login_button"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            tools:visibility="gone"/>
-
-    </LinearLayout>
+        style="@style/AppMainButton"
+        android:layout_marginTop="@dimen/button_sent_margin_bottom"/>
 
 </LinearLayout>

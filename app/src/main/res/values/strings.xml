@@ -14,6 +14,12 @@
     <string name="hint_pass">Password</string>
     <string name="hint_email">Email</string>
     <string name="facebook_app_id">625165670980267</string>
+    <string name="action_logout">Logout</string>
+    <string name="on_error_login">Please, check out your internet connection!</string>
+    <string name="on_cancel_login">Entrance was canceled!</string>
+    <string name="firebase_error_login">You have some problem with signing to your account!</string>
+    <string name="message_send_dialog_title">Sending message</string>
+    <string name="message_send_dialog_text">Please wait...</string>
+    <string name="sent_message">Message with new password was sent!</string>
 
-    <string name="sign_out">Login with\nGoogle</string>
 </resources>

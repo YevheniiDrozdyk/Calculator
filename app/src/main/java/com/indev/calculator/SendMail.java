@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.widget.Toast;
 
-import com.indev.calculator.activity.MainActivity;
+import com.indev.calculator.activity.LoginActivity;
 import com.indev.calculator.config.AccountConfig;
 
 import java.util.Properties;
@@ -25,7 +25,7 @@ import javax.mail.internet.MimeMessage;
 public class SendMail extends AsyncTask<Void, Void, Void> {
 
     /* Declaring Variables*/
-    private Context context;
+    private Context mContext;
     private Session session;
 
     /* Information to send email */
@@ -38,10 +38,9 @@ public class SendMail extends AsyncTask<Void, Void, Void> {
 
     private final String DIALOG_TITLE = "Sending message";
     private final String DIALOG_MESSAGE = "Please wait...";
-    private final String SENT_MESSAGE = "Message with new password was sent on your E-Mail!";
 
     public SendMail(Context context, String email, String subject, String message) {
-        this.context = context;
+        this.mContext = context;
         this.email = email;
         this.subject = subject;
         this.message = message;
@@ -50,18 +49,18 @@ public class SendMail extends AsyncTask<Void, Void, Void> {
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
-        progressDialog = ProgressDialog.show(context, DIALOG_TITLE, DIALOG_MESSAGE);
+        progressDialog = ProgressDialog.show(mContext, DIALOG_TITLE, DIALOG_MESSAGE);
     }
 
     @Override
     protected void onPostExecute(Void aVoid) {
         super.onPostExecute(aVoid);
         progressDialog.dismiss();
-        Toast.makeText(context, SENT_MESSAGE, Toast.LENGTH_LONG).show();
-        Intent intent = new Intent(context, MainActivity.class);
-        context.startActivity(intent);
+        Toast.makeText(mContext, R.string.sent_message, Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(mContext, LoginActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        mContext.startActivity(intent);
     }
-
 
     @Override
     protected Void doInBackground(Void... params) {

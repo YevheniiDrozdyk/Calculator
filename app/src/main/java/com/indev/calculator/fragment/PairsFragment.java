@@ -23,8 +23,6 @@ public class PairsFragment extends Fragment {
     private String answer;
 
     private final int REQUEST_CODE = 1;
-    private final String INPUT_ERROR = "Please, fill out the correct input field!";
-    private final String NUMBER_ERROR = "You don't have a two-digit number!";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -37,7 +35,7 @@ public class PairsFragment extends Fragment {
             public void onClick(View v) {
                 textAnswer.setText("");
                 if (!editPairs.getText().toString().equals("")) {
-                    putPairs = editPairs.getText().toString();
+                    putPairs = editPairs.getText().toString().trim();
                     pairs = new Pairs(putPairs);
                     int response = pairs.checkInputPairs();
                     if (response == REQUEST_CODE) {
@@ -45,10 +43,11 @@ public class PairsFragment extends Fragment {
                         if (!answer.equals("")) {
                             textAnswer.setText(answer);
                         } else {
-                            makeToast(NUMBER_ERROR);
+                            Toast.makeText(getContext(), "You don't have a two-digit number", Toast.LENGTH_SHORT).show();
                         }
                     } else {
-                        makeToast(INPUT_ERROR);
+                        Toast.makeText(getContext(), "Please, fill out this field correctly!", Toast.LENGTH_LONG).show();
+                        editPairs.setText("");
                     }
                 }
             }
@@ -57,11 +56,6 @@ public class PairsFragment extends Fragment {
 
         return palindromeView;
 
-    }
-
-    private void makeToast(String text) {
-        Toast.makeText(getContext(), text, Toast.LENGTH_LONG).show();
-        editPairs.setText("");
     }
 
 }
