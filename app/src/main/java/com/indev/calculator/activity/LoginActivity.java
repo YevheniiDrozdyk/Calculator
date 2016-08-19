@@ -1,10 +1,12 @@
 package com.indev.calculator.activity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.facebook.AccessToken;
@@ -56,6 +58,13 @@ public class LoginActivity extends AppCompatActivity {
     private static final String TWITTER_KEY = "9OmW5YDIaaBGfsUYpeB9ziD7h";
     private static final String TWITTER_SECRET = "jxkJB4yUZNzrTgDMt2uejIGUjHYT1B8SPgpoAXshrJ8QMPx3hB";
 
+    private EditText editLogin;
+    private EditText editPass;
+    private ProgressDialog progressDialog;
+
+    private static final String DIALOG_MESSAGE = "Please wait...";
+    private static final String INVALID_ENTRANCE = "Invalid email-address or password";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,6 +72,7 @@ public class LoginActivity extends AppCompatActivity {
         setFacebookSignIn();
         setGoogleSignIn();
         setTwitterSignIn();
+        setUserSignIn();
     }
 
     public void onForgottenPassClick(View view) {
@@ -70,8 +80,37 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void onSendClick(View view) {
+    private void loginUser() {
+        String email = editLogin.getText().toString().trim();
+        String password = editPass.getText().toString().trim();
+        progressDialog.setMessage(DIALOG_MESSAGE);
+        progressDialog.show();
+        mAuth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        progressDialog.dismiss();
+                        if (task.isSuccessful()) {
+                            goCalculatorActivity();
+                        } else {
+                            editPass.setText("");
+                            Toast.makeText(getApplicationContext(), INVALID_ENTRANCE, Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+    }
 
+    private void setUserSignIn() {
+        editLogin = (EditText) findViewById(R.id.editLogin);
+        editPass = (EditText) findViewById(R.id.editPassword);
+        progressDialog = new ProgressDialog(this);
+        if (mAuth.getCurrentUser() != null) {
+            goCalculatorActivity();
+        }
+    }
+
+    public void onSendClick(View view) {
+        loginUser();
     }
 
     private void setFirebaseAuth() {
@@ -187,7 +226,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void handleTwitterSession(TwitterSession session) {
-        AuthCredential credential = TwitterAuthProvider.getCredential(session.getAuthToken().token,session.getAuthToken().secret);
+        AuthCredential credential = TwitterAuthProvider.getCredential(session.getAuthToken().token, session.getAuthToken().secret);
         mAuth.signInWithCredential(credential).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
@@ -232,7 +271,9 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void onRegistrationClick(View view) {
-
+        Intent intent = new Intent(this, RegistrationActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
     }
 
 }

@@ -22,4 +22,12 @@
     <string name="message_send_dialog_text">Please wait...</string>
     <string name="sent_message">Message with new password was sent!</string>
 
+    <string name="registration_text">To book you course please fill in the registration form</string>
+
+    <string name="children">Children</string>
+    <string name="hint_first_name">First Name</string>
+    <string name="hint_last_name">Last Name</string>
+    <string name="hint_phone">Phone</string>
+    <string name="hint_birthday">Date of Birth</string>
+
 </resources>

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:background="@color/colorPrimary">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/registration_text"
+        android:gravity="center"
+        android:textColor="@color/colorWhite"/>
+
+    <EditText
+        android:id="@+id/editFirstName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textVisiblePassword"
+        android:ems="10"
+        android:hint="@string/hint_first_name"
+        android:theme="@style/AppEditText"
+        android:textColor="@color/colorWhite"
+        android:drawableLeft="@drawable/ic_person_outline_white_24dp"
+        android:paddingLeft="@dimen/edit_text_registration_padding_left"/>
+
+    <EditText
+        android:id="@+id/editLastName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textVisiblePassword"
+        android:ems="10"
+        android:hint="@string/hint_last_name"
+        android:theme="@style/AppEditText"
+        android:textColor="@color/colorWhite"
+        android:drawableLeft="@drawable/ic_person_outline_white_24dp"
+        android:paddingLeft="@dimen/edit_text_registration_padding_left"/>
+
+    <EditText
+        android:id="@+id/editEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textVisiblePassword"
+        android:ems="10"
+        android:hint="@string/hint_email"
+        android:theme="@style/AppEditText"
+        android:textColor="@color/colorWhite"
+        android:drawableLeft="@drawable/ic_mail_outline_white_24dp"
+        android:paddingLeft="@dimen/edit_text_registration_padding_left"/>
+
+    <EditText
+        android:id="@+id/editPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textVisiblePassword"
+        android:ems="10"
+        android:hint="@string/hint_phone"
+        android:theme="@style/AppEditText"
+        android:textColor="@color/colorWhite"
+        android:drawableLeft="@drawable/ic_smartphone_white_24dp"
+        android:paddingLeft="@dimen/edit_text_registration_padding_left"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:textColor="@color/colorWhite"
+        android:textAllCaps="true"
+        android:text="@string/children"/>
+
+    <EditText
+        android:id="@+id/editLastNameChild"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textVisiblePassword"
+        android:ems="10"
+        android:hint="@string/hint_last_name"
+        android:theme="@style/AppEditText"
+        android:textColor="@color/colorWhite"
+        android:drawableLeft="@drawable/ic_person_outline_white_24dp"
+        android:paddingLeft="@dimen/edit_text_registration_padding_left"/>
+
+    <EditText
+        android:id="@+id/editBirthday"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textVisiblePassword"
+        android:ems="10"
+        android:hint="@string/hint_birthday"
+        android:theme="@style/AppEditText"
+        android:textColor="@color/colorWhite"
+        android:drawableLeft="@drawable/ic_date_range_white_24dp"
+        android:paddingLeft="@dimen/edit_text_registration_padding_left"/>
+
+    <EditText
+        android:id="@+id/editLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textVisiblePassword"
+        android:ems="10"
+        android:hint="@string/hint_login"
+        android:theme="@style/AppEditText"
+        android:textColor="@color/colorWhite"
+        android:drawableLeft="@drawable/ic_person_outline_white_24dp"
+        android:paddingLeft="@dimen/edit_text_registration_padding_left"/>
+
+    <EditText
+        android:id="@+id/editPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:hint="@string/hint_pass"
+        android:theme="@style/AppEditText"
+        android:textColor="@color/colorWhite"
+        android:drawableLeft="@drawable/ic_lock_outline_white_24dp"
+        android:paddingLeft="@dimen/edit_text_registration_padding_left"/>
+
+    <Button
+        android:id="@+id/btnSend"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onSendClick"
+        android:text="@string/button_send"
+        style="@style/AppButtonSend"
+        android:layout_marginTop="@dimen/button_sent_margin_top"
+        android:layout_marginBottom="@dimen/button_sent_margin_bottom"/>
+
+</LinearLayout>

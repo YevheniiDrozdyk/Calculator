@@ -20,4 +20,8 @@
     <dimen name="app_text_margin_bottom">25dp</dimen>
     <dimen name="button_sent_margin_top">15dp</dimen>
     <dimen name="button_sent_margin_bottom">20dp</dimen>
+
+    <dimen name="edit_text_registration_padding_left">5dp</dimen>
+
+    <dimen name="fab_margin">16dp</dimen>
 </resources>
