@@ -8,7 +8,7 @@ import android.view.animation.DecelerateInterpolator;
 import android.widget.BaseAdapter;
 import android.widget.EditText;
 
-import com.indev.calculator.model.EditTextChildrenValues;
+import com.indev.calculator.EditTextChildValue;
 import com.indev.calculator.R;
 import com.indev.calculator.model.ListChildrenModel;
 
@@ -48,12 +48,14 @@ public class ListChildrenAdapter extends BaseAdapter {
             mHolder = new ViewHolder();
             convertView = mLayoutInflater.inflate(R.layout.item_list_children, null);
             mHolder.editFirstName = (EditText) convertView.findViewById(R.id.editFirstNameChild);
+            mHolder.editBithday = (EditText) convertView.findViewById(R.id.editBirthday);
+            mHolder.editPhone = (EditText) convertView.findViewById(R.id.editPhone);
             convertView.setTag(mHolder);
         } else {
             mHolder = (ViewHolder) convertView.getTag();
         }
         for (int i = 0; i < mListChildren.size(); i++) {
-            mListChildren.get(position).getArrayList().add(new EditTextChildrenValues(""));
+            mListChildren.get(position).getArrayList().add(new EditTextChildValue(""));
         }
         if (!mListChildren.get(position).getArrayList().get(position).getValue().equals("")) {
             mHolder.editFirstName.setText(mListChildren.get(position).getArrayList().get(position).getValue());
@@ -82,5 +84,7 @@ public class ListChildrenAdapter extends BaseAdapter {
 
     class ViewHolder {
         EditText editFirstName;
+        EditText editBithday;
+        EditText editPhone;
     }
 }

@@ -1,14 +1,12 @@
 package com.indev.calculator.model;
 
+import com.indev.calculator.EditTextChildValue;
+
 import java.util.ArrayList;
 
 public class ListChildrenModel {
     private String mTitle;
-    private ArrayList<EditTextChildrenValues> mArrayList = new ArrayList<>();
-
-    public ListChildrenModel(String title) {
-        this.mTitle = title;
-    }
+    private ArrayList<EditTextChildValue> mArrayList = new ArrayList<>();
 
     public String getTitle() {
         return mTitle;
@@ -18,11 +16,11 @@ public class ListChildrenModel {
         this.mTitle = title;
     }
 
-    public ArrayList<EditTextChildrenValues> getArrayList() {
+    public ArrayList<EditTextChildValue> getArrayList() {
         return mArrayList;
     }
 
-    public void setArrayList(ArrayList<EditTextChildrenValues> arrayList) {
+    public void setArrayList(ArrayList<EditTextChildValue> arrayList) {
         this.mArrayList = arrayList;
     }
 }

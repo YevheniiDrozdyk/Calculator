@@ -1,9 +1,9 @@
-package com.indev.calculator.model;
+package com.indev.calculator;
 
-public class EditTextChildrenValues {
+public class EditTextChildValue {
     private String mValue;
 
-    public EditTextChildrenValues(String value) {
+    public EditTextChildValue(String value) {
         this.mValue = value;
     }
 

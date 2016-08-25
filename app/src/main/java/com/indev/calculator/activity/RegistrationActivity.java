@@ -40,7 +40,7 @@ public class RegistrationActivity extends AppCompatActivity {
         setOnFabClick();
 
         mListChildren = new ArrayList<>();
-        mListChildren.add(new ListChildrenModel("CHILDREN"));
+        mListChildren.add(new ListChildrenModel());
         mListView = (ListView) findViewById(R.id.listChildren);
         adapter = new ListChildrenAdapter(RegistrationActivity.this, mListChildren);
         mListView.setAdapter(adapter);
@@ -102,7 +102,7 @@ public class RegistrationActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mListChildren.add(new ListChildrenModel("CHILDREN"));
+                mListChildren.add(new ListChildrenModel());
                 adapter = new ListChildrenAdapter(RegistrationActivity.this, mListChildren);
                 mListView.setAdapter(adapter);
                 mListView.setSelection(++mItemPosition);

@@ -41,7 +41,7 @@
     </style>
     <style name="AppButtonSend">
         <item name="android:textAllCaps">true</item>
-        <item name="android:background">@drawable/shape_button_send</item>
+        <item name="android:background">@drawable/selector_button_send</item>
         <item name="android:textColor">@color/colorWhite</item>
     </style>
     <style name="AppButtonDivider">
