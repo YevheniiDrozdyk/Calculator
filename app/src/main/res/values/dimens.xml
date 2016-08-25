@@ -4,7 +4,6 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
 
     <dimen name="activity_padding">50dp</dimen>
-
     <dimen name="app_start_text_size">40sp</dimen>
     <dimen name="app_recovery_text_size">16sp</dimen>
     <dimen name="main_button_text_size">15sp</dimen>
@@ -18,10 +17,13 @@
     <dimen name="edit_email_margin_bottom">100dp</dimen>
 
     <dimen name="app_text_margin_bottom">25dp</dimen>
-    <dimen name="button_sent_margin_top">15dp</dimen>
-    <dimen name="button_sent_margin_bottom">20dp</dimen>
+    <dimen name="button_sent_margin_top">25dp</dimen>
+    <dimen name="button_sent_margin_bottom">25dp</dimen>
 
+    <dimen name="main_text_view_registration_margin_top">15dp</dimen>
+    <dimen name="main_text_view_registration_margin_bottom">10dp</dimen>
     <dimen name="edit_text_registration_padding_left">5dp</dimen>
+
 
     <dimen name="fab_margin">16dp</dimen>
 </resources>

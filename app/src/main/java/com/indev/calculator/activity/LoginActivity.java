@@ -58,7 +58,7 @@ public class LoginActivity extends AppCompatActivity {
     private static final String TWITTER_KEY = "9OmW5YDIaaBGfsUYpeB9ziD7h";
     private static final String TWITTER_SECRET = "jxkJB4yUZNzrTgDMt2uejIGUjHYT1B8SPgpoAXshrJ8QMPx3hB";
 
-    private EditText editLogin;
+    private EditText editEmail;
     private EditText editPass;
     private ProgressDialog progressDialog;
 
@@ -80,9 +80,7 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    private void loginUser() {
-        String email = editLogin.getText().toString().trim();
-        String password = editPass.getText().toString().trim();
+    private void loginUser(String email, String password) {
         progressDialog.setMessage(DIALOG_MESSAGE);
         progressDialog.show();
         mAuth.signInWithEmailAndPassword(email, password)
@@ -101,7 +99,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void setUserSignIn() {
-        editLogin = (EditText) findViewById(R.id.editLogin);
+        editEmail = (EditText) findViewById(R.id.editEmail);
         editPass = (EditText) findViewById(R.id.editPassword);
         progressDialog = new ProgressDialog(this);
         if (mAuth.getCurrentUser() != null) {
@@ -110,7 +108,15 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void onSendClick(View view) {
-        loginUser();
+        String email = editEmail.getText().toString().trim();
+        String password = editPass.getText().toString().trim();
+        if (email.equals("")) {
+            Toast.makeText(getApplicationContext(), "Write your login", Toast.LENGTH_SHORT).show();
+        } else if (password.equals("")) {
+            Toast.makeText(getApplicationContext(), "Write your password", Toast.LENGTH_SHORT).show();
+        } else {
+            loginUser(email, password);
+        }
     }
 
     private void setFirebaseAuth() {

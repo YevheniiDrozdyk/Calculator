@@ -24,7 +24,6 @@ import javax.mail.internet.MimeMessage;
  */
 public class SendMail extends AsyncTask<Void, Void, Void> {
 
-    /* Declaring Variables*/
     private Context mContext;
     private Session session;
 
@@ -76,13 +75,13 @@ public class SendMail extends AsyncTask<Void, Void, Void> {
                 new javax.mail.Authenticator() {
                     //Authenticating the password
                     protected PasswordAuthentication getPasswordAuthentication() {
-                        return new PasswordAuthentication(AccountConfig.EMAIL, AccountConfig.PASSWORD);
+                        return new PasswordAuthentication(AccountConfig.ADMIN_EMAIL, AccountConfig.ADMIN_PASSWORD);
                     }
                 });
 
         try {
             MimeMessage mm = new MimeMessage(session);
-            mm.setFrom(new InternetAddress(AccountConfig.EMAIL));
+            mm.setFrom(new InternetAddress(AccountConfig.ADMIN_EMAIL));
             mm.addRecipient(Message.RecipientType.TO, new InternetAddress(email));
             mm.setSubject(subject);
             mm.setText(message);

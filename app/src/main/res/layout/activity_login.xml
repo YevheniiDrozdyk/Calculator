@@ -17,15 +17,15 @@
         android:layout_marginBottom="@dimen/app_text_margin_bottom"/>
 
     <EditText
-        android:id="@+id/editLogin"
+        android:id="@+id/editEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textVisiblePassword"
+        android:inputType="textEmailAddress"
         android:ems="10"
-        android:hint="@string/hint_login"
+        android:hint="@string/hint_email"
         android:theme="@style/AppEditText"
         android:textColor="@color/colorWhite"
-        android:drawableLeft="@drawable/ic_person_outline_white_24dp"/>
+        android:drawableLeft="@drawable/ic_mail_outline_white_24dp"/>
 
     <EditText
         android:id="@+id/editPassword"

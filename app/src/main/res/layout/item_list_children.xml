@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
+
+    <TextView
+        android:id="@+id/textChildren"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:textColor="@color/colorWhite"
+        android:textAllCaps="true"
+        android:layout_marginTop="@dimen/main_text_view_registration_margin_top"
+        android:layout_marginBottom="5dp"
+        android:text="@string/children"/>
+
+    <EditText
+        android:id="@+id/editFirstNameChild"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textVisiblePassword"
+        android:ems="10"
+        android:hint="@string/hint_first_name"
+        android:theme="@style/AppEditText"
+        android:textColor="@color/colorWhite"
+        android:drawableLeft="@drawable/ic_person_outline_white_24dp"
+        android:paddingLeft="@dimen/edit_text_registration_padding_left"/>
+
+    <EditText
+        android:id="@+id/editBirthday"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="datetime"
+        android:ems="10"
+        android:hint="@string/hint_birthday"
+        android:theme="@style/AppEditText"
+        android:textColor="@color/colorWhite"
+        android:drawableLeft="@drawable/ic_date_range_white_24dp"
+        android:paddingLeft="@dimen/edit_text_registration_padding_left"/>
+
+    <EditText
+        android:id="@+id/editPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textVisiblePassword"
+        android:ems="10"
+        android:hint="@string/hint_phone"
+        android:theme="@style/AppEditText"
+        android:textColor="@color/colorWhite"
+        android:drawableLeft="@drawable/ic_smartphone_white_24dp"
+        android:paddingLeft="@dimen/edit_text_registration_padding_left"/>
+
+</LinearLayout>
