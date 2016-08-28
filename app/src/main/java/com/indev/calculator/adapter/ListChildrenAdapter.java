@@ -19,6 +19,10 @@ public class ListChildrenAdapter extends BaseAdapter {
     private LayoutInflater mLayoutInflater;
     private ViewHolder mHolder;
     private ArrayList<ListChildrenModel> mListChildren;
+    private static final int INDEX_FIRST_NAME = 0;
+    private static final int INDEX_BIRTHDAY = 1;
+    private static final int INDEX_PHONE = 2;
+    private static final int COUNT_OF_EDIT_TEXTS = 3;
     private int mLastPosition;
     private float mInitialTranslation;
 
@@ -48,28 +52,65 @@ public class ListChildrenAdapter extends BaseAdapter {
             mHolder = new ViewHolder();
             convertView = mLayoutInflater.inflate(R.layout.item_list_children, null);
             mHolder.editFirstName = (EditText) convertView.findViewById(R.id.editFirstNameChild);
-            mHolder.editBithday = (EditText) convertView.findViewById(R.id.editBirthday);
+            mHolder.editBirthday = (EditText) convertView.findViewById(R.id.editBirthday);
             mHolder.editPhone = (EditText) convertView.findViewById(R.id.editPhone);
             convertView.setTag(mHolder);
         } else {
             mHolder = (ViewHolder) convertView.getTag();
         }
         for (int i = 0; i < mListChildren.size(); i++) {
-            mListChildren.get(position).getArrayList().add(new EditTextChildValue(""));
+            for (int j = 0; j < COUNT_OF_EDIT_TEXTS; j++) {
+                mListChildren.get(position).getArrayList().add(new EditTextChildValue(""));
+            }
         }
-        if (!mListChildren.get(position).getArrayList().get(position).getValue().equals("")) {
-            mHolder.editFirstName.setText(mListChildren.get(position).getArrayList().get(position).getValue());
+        if (!mListChildren.get(position).getArrayList().get(INDEX_FIRST_NAME).getValue().equals("")) {
+            mHolder.editFirstName.setText(mListChildren.get(position).getArrayList().get(INDEX_FIRST_NAME).getValue());
+
         } else {
             mHolder.editFirstName.setText("");
         }
+
+        if (!mListChildren.get(position).getArrayList().get(INDEX_BIRTHDAY).getValue().equals("")) {
+            mHolder.editBirthday.setText(mListChildren.get(position).getArrayList().get(INDEX_BIRTHDAY).getValue());
+
+        } else {
+            mHolder.editBirthday.setText("");
+        }
+
+        if (!mListChildren.get(position).getArrayList().get(INDEX_PHONE).getValue().equals("")) {
+            mHolder.editPhone.setText(mListChildren.get(position).getArrayList().get(INDEX_PHONE).getValue());
+
+        } else {
+            mHolder.editPhone.setText("");
+        }
+
         mHolder.editFirstName.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             public void onFocusChange(View v, boolean hasFocus) {
                 if (!hasFocus) {
                     final EditText Caption = (EditText) v;
-                    mListChildren.get(position).getArrayList().get(position).setValue(Caption.getText().toString());
+                    mListChildren.get(position).getArrayList().get(INDEX_FIRST_NAME).setValue(Caption.getText().toString());
                 }
             }
         });
+
+        mHolder.editBirthday.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (!hasFocus) {
+                    final EditText Caption = (EditText) v;
+                    mListChildren.get(position).getArrayList().get(INDEX_BIRTHDAY).setValue(Caption.getText().toString());
+                }
+            }
+        });
+
+        mHolder.editPhone.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (!hasFocus) {
+                    final EditText Caption = (EditText) v;
+                    mListChildren.get(position).getArrayList().get(INDEX_PHONE).setValue(Caption.getText().toString());
+                }
+            }
+        });
+
         mInitialTranslation = (mLastPosition <= position ? 500f : -500f);
         convertView.setTranslationY(mInitialTranslation);
         convertView.animate()
@@ -84,7 +125,7 @@ public class ListChildrenAdapter extends BaseAdapter {
 
     class ViewHolder {
         EditText editFirstName;
-        EditText editBithday;
+        EditText editBirthday;
         EditText editPhone;
     }
 }

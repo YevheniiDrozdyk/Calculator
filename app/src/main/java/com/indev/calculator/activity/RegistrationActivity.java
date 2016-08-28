@@ -29,9 +29,9 @@ public class RegistrationActivity extends AppCompatActivity {
     private EditText mEditEmail;
     private EditText mEditPassword;
     private ListView mListView;
-    private int mItemPosition;
     private ArrayList<ListChildrenModel> mListChildren;
-    private ListChildrenAdapter adapter;
+    private ListChildrenAdapter mAdapter;
+    private int mItemPosition;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,8 +42,8 @@ public class RegistrationActivity extends AppCompatActivity {
         mListChildren = new ArrayList<>();
         mListChildren.add(new ListChildrenModel());
         mListView = (ListView) findViewById(R.id.listChildren);
-        adapter = new ListChildrenAdapter(RegistrationActivity.this, mListChildren);
-        mListView.setAdapter(adapter);
+        mAdapter = new ListChildrenAdapter(RegistrationActivity.this, mListChildren);
+        mListView.setAdapter(mAdapter);
     }
 
     private void initiateEditTextUser() {
@@ -77,9 +77,10 @@ public class RegistrationActivity extends AppCompatActivity {
     public void onSendClick(View view) {
 
         String all = "";
-        for (int i = 0; i < mListChildren.size(); i++) {
-            {
-                all += mListChildren.get(i).getArrayList().get(i).getValue() + "\n";
+        for (int i=0; i<mListChildren.size(); i++){
+            for (int j=0; j<mListChildren.get(i).getArrayList().size(); j++) {
+                if (! mListChildren.get(i).getArrayList().get(j).getValue().equals(""))
+                all += mListChildren.get(i).getArrayList().get(j).getValue() + "\n";
             }
         }
         Toast.makeText(RegistrationActivity.this, all, Toast.LENGTH_LONG).show();
@@ -103,8 +104,8 @@ public class RegistrationActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 mListChildren.add(new ListChildrenModel());
-                adapter = new ListChildrenAdapter(RegistrationActivity.this, mListChildren);
-                mListView.setAdapter(adapter);
+                mAdapter = new ListChildrenAdapter(RegistrationActivity.this, mListChildren);
+                mListView.setAdapter(mAdapter);
                 mListView.setSelection(++mItemPosition);
             }
         });

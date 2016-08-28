@@ -66,6 +66,17 @@
         android:drawableLeft="@drawable/ic_lock_outline_white_24dp"
         android:paddingLeft="@dimen/edit_text_registration_padding_left"/>
 
+    <TextView
+        android:id="@+id/textChildren"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:textColor="@color/colorWhite"
+        android:textAllCaps="true"
+        android:layout_marginTop="@dimen/main_text_view_registration_margin_top"
+        android:layout_marginBottom="5dp"
+        android:text="@string/children"/>
+
     <ListView
         android:id="@+id/listChildren"
         android:layout_width="match_parent"

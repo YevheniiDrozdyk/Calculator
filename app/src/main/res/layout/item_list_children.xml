@@ -5,17 +5,6 @@
     android:layout_height="match_parent"
     android:background="@color/colorPrimary">
 
-    <TextView
-        android:id="@+id/textChildren"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="start"
-        android:textColor="@color/colorWhite"
-        android:textAllCaps="true"
-        android:layout_marginTop="@dimen/main_text_view_registration_margin_top"
-        android:layout_marginBottom="5dp"
-        android:text="@string/children"/>
-
     <EditText
         android:id="@+id/editFirstNameChild"
         android:layout_width="match_parent"
