@@ -23,11 +23,10 @@ public class FactorialFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
-        View palindromeView = inflater.inflate(R.layout.fragment_factorial, container, false);
-        editNumberFact = (EditText) palindromeView.findViewById(R.id.editNumberFact);
-        textAnswer = (TextView) palindromeView.findViewById(R.id.textAnswer);
-        calculateFact = (Button) palindromeView.findViewById(R.id.btnCalculateFact);
+        View factorialView = inflater.inflate(R.layout.fragment_factorial, container, false);
+        editNumberFact = (EditText) factorialView.findViewById(R.id.editNumberFact);
+        textAnswer = (TextView) factorialView.findViewById(R.id.textAnswer);
+        calculateFact = (Button) factorialView.findViewById(R.id.btnCalculateFact);
         calculateFact.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -41,7 +40,7 @@ public class FactorialFragment extends Fragment {
             }
         });
 
-        return palindromeView;
+        return factorialView;
 
     }
 

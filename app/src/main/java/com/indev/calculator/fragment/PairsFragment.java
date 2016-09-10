@@ -26,10 +26,10 @@ public class PairsFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View palindromeView = inflater.inflate(R.layout.fragment_pairs, container, false);
-        editPairs = (EditText) palindromeView.findViewById(R.id.editPairs);
-        textAnswer = (TextView) palindromeView.findViewById(R.id.textAnswer);
-        calculatePairs = (Button) palindromeView.findViewById(R.id.btnCalculatePairs);
+        View pairsView = inflater.inflate(R.layout.fragment_pairs, container, false);
+        editPairs = (EditText) pairsView.findViewById(R.id.editPairs);
+        textAnswer = (TextView) pairsView.findViewById(R.id.textAnswer);
+        calculatePairs = (Button) pairsView.findViewById(R.id.btnCalculatePairs);
         calculatePairs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -54,7 +54,7 @@ public class PairsFragment extends Fragment {
 
         });
 
-        return palindromeView;
+        return pairsView;
 
     }
 
