@@ -32,6 +32,7 @@ public class RegistrationActivity extends AppCompatActivity {
     private ArrayList<ListChildrenModel> mListChildren;
     private ListChildrenAdapter mAdapter;
     private int mItemPosition;
+    private static final String TAG = "myLogs";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,16 +76,6 @@ public class RegistrationActivity extends AppCompatActivity {
     }
 
     public void onSendClick(View view) {
-
-        String all = "";
-        for (int i=0; i<mListChildren.size(); i++){
-            for (int j=0; j<mListChildren.get(i).getArrayList().size(); j++) {
-                if (! mListChildren.get(i).getArrayList().get(j).getValue().equals(""))
-                all += mListChildren.get(i).getArrayList().get(j).getValue() + "\n";
-            }
-        }
-        Toast.makeText(RegistrationActivity.this, all, Toast.LENGTH_LONG).show();
-
         String firstName = mEditFirstName.getText().toString();
         String lastName = mEditLastName.getText().toString();
         String email = mEditEmail.getText().toString().trim();
@@ -94,8 +85,9 @@ public class RegistrationActivity extends AppCompatActivity {
         } else if (password.equals("")) {
             Toast.makeText(getApplicationContext(), "Please. write password!", Toast.LENGTH_SHORT).show();
         } else {
-            //registerUser(email, password);
+            registerUser(email, password);
         }
+
     }
 
     private void setOnFabClick() {

@@ -40,6 +40,7 @@ public class PalindromeFragment extends Fragment {
             }
         });
 
+
         return palindromeView;
 
     }

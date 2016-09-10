@@ -3,25 +3,29 @@ package com.indev.calculator.math;
 import java.math.BigInteger;
 
 public class Factorial {
-
     /**
      * To find the sum of the digits in the number, just call a method getAnswer()
      */
+    private int mInputNumber;
 
-    private int inputNumber; //input number of factorial
-
+    /**
+     * Constructor initializes input number which will be calculate
+     *
+     * @param inputNumber
+     */
     public Factorial(int inputNumber) {
-        this.inputNumber = inputNumber;
+        this.mInputNumber = inputNumber;
     }
 
     public int getAnswer() {
-        return getSum(getNumberFact(inputNumber));
+        return getSum(getNumberFact(mInputNumber));
     }
 
     /**
      * To find a factorial
+     *
      * @param number - input number
-     * @return
+     * @return factorial result of input number
      */
     private BigInteger getNumberFact(int number) {
         BigInteger factorialRes = BigInteger.ONE;
@@ -33,8 +37,9 @@ public class Factorial {
 
     /**
      * To find a sum of numbers of factorial
+     *
      * @param factorialRes - factorial of number
-     * @return
+     * @return sum of numbers of factorial result
      */
     private int getSum(BigInteger factorialRes) {
         int sum = 0;

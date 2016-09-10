@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.EditText;
 
 import com.indev.calculator.R;
-import com.indev.calculator.SendMail;
+import com.indev.calculator.mail.SendMail;
 
 import java.util.Random;
 

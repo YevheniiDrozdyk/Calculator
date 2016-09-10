@@ -1,7 +1,5 @@
 package com.indev.calculator.model;
 
-import com.indev.calculator.EditTextChildValue;
-
 import java.util.ArrayList;
 
 public class ListChildrenModel {

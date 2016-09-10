@@ -1,20 +1,27 @@
 package com.indev.calculator.math;
 
 public class Palindrome {
-
     /**
      * To check the input number on palindrome, just call a method getAnswer()
      */
+    private int mInputNumber;
 
-    private int inputNumber;
-
+    /**
+     * Constructor initializes input number which will be calculate
+     *
+     * @param inputNumber
+     */
     public Palindrome(int inputNumber) {
-        this.inputNumber = inputNumber;
+        this.mInputNumber = inputNumber;
     }
 
+    /**
+     * It returns "Palindrome" if input number tests on palindrome, else - "Not palindrome"
+     * @return
+     */
     public String getAnswer() {
         String result;
-        if (isPalindromeNumber(inputNumber)) {
+        if (isPalindromeNumber(mInputNumber)) {
             result = "Palindrome";
         } else {
             result = "Not palindrome";
@@ -24,7 +31,8 @@ public class Palindrome {
     }
 
     /**
-     * It checks after reversing our input number on equality
+     * It checks after reversing input number on equality
+     *
      * @param number
      * @return
      */
@@ -38,7 +46,8 @@ public class Palindrome {
     }
 
     /**
-     * It revers our input number
+     * It revers input number
+     *
      * @param number - input
      * @return
      */
@@ -47,7 +56,7 @@ public class Palindrome {
         char[] digitsArray = String.valueOf(number).toCharArray();
         char[] reversedDigitsArray = new char[digitsArray.length];
 
-        for (int i = digitsArray.length - 1, j=0; i >= 0; i--) {
+        for (int i = digitsArray.length - 1, j = 0; i >= 0; i--) {
             reversedDigitsArray[j++] = digitsArray[i];
         }
 

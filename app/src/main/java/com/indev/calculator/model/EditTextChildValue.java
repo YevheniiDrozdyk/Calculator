@@ -1,4 +1,4 @@
-package com.indev.calculator;
+package com.indev.calculator.model;
 
 public class EditTextChildValue {
     private String mValue;

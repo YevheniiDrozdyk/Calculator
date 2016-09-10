@@ -1,4 +1,4 @@
-package com.indev.calculator;
+package com.indev.calculator.mail;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -6,8 +6,8 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.widget.Toast;
 
+import com.indev.calculator.R;
 import com.indev.calculator.activity.LoginActivity;
-import com.indev.calculator.config.AccountConfig;
 
 import java.util.Properties;
 

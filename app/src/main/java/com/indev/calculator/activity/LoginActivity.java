@@ -53,14 +53,15 @@ public class LoginActivity extends AppCompatActivity {
 
     private GoogleApiClient mGoogleApiClient;
     private static final int RC_SIGN_IN_GOOGLE = 9001;
+    private static final String GOOGLE_ID_TOKEN = "995679213896-r1ppkif90fqcpls1rpe5blt62oe4ngkf.apps.googleusercontent.com";
 
     private TwitterAuthClient mTwitterAuthClient;
     private static final String TWITTER_KEY = "9OmW5YDIaaBGfsUYpeB9ziD7h";
     private static final String TWITTER_SECRET = "jxkJB4yUZNzrTgDMt2uejIGUjHYT1B8SPgpoAXshrJ8QMPx3hB";
 
-    private EditText editEmail;
-    private EditText editPass;
-    private ProgressDialog progressDialog;
+    private EditText mEditEmail;
+    private EditText mEditPass;
+    private ProgressDialog mProgressDialog;
 
     private static final String DIALOG_MESSAGE = "Please wait...";
     private static final String INVALID_ENTRANCE = "Invalid email-address or password";
@@ -81,17 +82,17 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void loginUser(String email, String password) {
-        progressDialog.setMessage(DIALOG_MESSAGE);
-        progressDialog.show();
+        mProgressDialog.setMessage(DIALOG_MESSAGE);
+        mProgressDialog.show();
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        progressDialog.dismiss();
+                        mProgressDialog.dismiss();
                         if (task.isSuccessful()) {
                             goCalculatorActivity();
                         } else {
-                            editPass.setText("");
+                            mEditPass.setText("");
                             Toast.makeText(getApplicationContext(), INVALID_ENTRANCE, Toast.LENGTH_SHORT).show();
                         }
                     }
@@ -99,19 +100,19 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void setUserSignIn() {
-        editEmail = (EditText) findViewById(R.id.editEmail);
-        editPass = (EditText) findViewById(R.id.editPassword);
-        progressDialog = new ProgressDialog(this);
+        mEditEmail = (EditText) findViewById(R.id.editEmail);
+        mEditPass = (EditText) findViewById(R.id.editPassword);
+        mProgressDialog = new ProgressDialog(this);
         if (mAuth.getCurrentUser() != null) {
             goCalculatorActivity();
         }
     }
 
     public void onSendClick(View view) {
-        String email = editEmail.getText().toString().trim();
-        String password = editPass.getText().toString().trim();
+        String email = mEditEmail.getText().toString().trim();
+        String password = mEditPass.getText().toString().trim();
         if (email.equals("")) {
-            Toast.makeText(getApplicationContext(), "Write your login", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Write your email", Toast.LENGTH_SHORT).show();
         } else if (password.equals("")) {
             Toast.makeText(getApplicationContext(), "Write your password", Toast.LENGTH_SHORT).show();
         } else {
@@ -173,7 +174,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private void setGoogleSignIn() {
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken("995679213896-r1ppkif90fqcpls1rpe5blt62oe4ngkf.apps.googleusercontent.com")
+                .requestIdToken(GOOGLE_ID_TOKEN)
                 .requestEmail()
                 .build();
         mGoogleApiClient = new GoogleApiClient.Builder(this)

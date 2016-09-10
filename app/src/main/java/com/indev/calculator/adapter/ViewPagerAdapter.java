@@ -28,18 +28,15 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
     @Override
     public Fragment getItem(int position) {
         Fragment fragment = null;
-
         for (int i = 0; i < fragmentsOfTabs.length; i++) {
             //Check of the appropriate fragment which we return
             if (position == i) {
                 fragment = fragmentsOfTabs[i];
                 break;
             }
-
         }
 
         return fragment;
-
     }
 
     @Override
