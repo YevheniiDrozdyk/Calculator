@@ -1,4 +1,5 @@
 <resources>
+
     <string name="app_name">Calculator</string>
     <string name="button_forgotten">Forgotten Password?</string>
     <string name="button_send">Send</string>
@@ -6,25 +7,26 @@
     <string name="login_google">Login with\nGoogle</string>
     <string name="login_twitter">Login with\nTwitter</string>
     <string name="button_reg">Registration</string>
-    <string name="text_recover_pass">Please, enter your email to recover\nyour password</string>
-    <string name="text_enter_number">Enter the number</string>
-    <string name="text_enter_pairs">Enter the pairs(Example:12 34 45 32 12 45 32 4)</string>
     <string name="button_calculate">Calculate</string>
-    <string name="hint_login">Login</string>
-    <string name="hint_pass">Password</string>
-    <string name="hint_email">Email</string>
-    <string name="facebook_app_id">625165670980267</string>
     <string name="action_logout">Logout</string>
+    <string name="children">Children</string>
+
+    <string name="text_recover_pass">Please, enter your email to recover\nyour password</string>
     <string name="on_error_login">Please, check out your internet connection!</string>
     <string name="on_cancel_login">Entrance was canceled!</string>
     <string name="firebase_error_login">You have some problem with signing to your account!</string>
     <string name="message_send_dialog_title">Sending message</string>
     <string name="message_send_dialog_text">Please wait...</string>
     <string name="sent_message">Message with new password was sent!</string>
-
     <string name="registration_text">To book you course please fill in the registration form</string>
+    <string name="text_enter_number">Enter the number</string>
+    <string name="text_enter_pairs">Enter the pairs(Example:12 34 45 32 12 45 32 4)</string>
 
-    <string name="children">Children</string>
+    <string name="facebook_app_id">625165670980267</string>
+
+    <string name="hint_login">Login</string>
+    <string name="hint_pass">Password</string>
+    <string name="hint_email">Email</string>
     <string name="hint_first_name">First Name</string>
     <string name="hint_last_name">Last Name</string>
     <string name="hint_phone">Phone</string>

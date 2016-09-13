@@ -24,6 +24,5 @@
     <dimen name="main_text_view_registration_margin_bottom">10dp</dimen>
     <dimen name="edit_text_registration_padding_left">5dp</dimen>
 
-
     <dimen name="fab_margin">16dp</dimen>
 </resources>

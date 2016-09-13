@@ -59,5 +59,8 @@ dependencies {
     compile('com.twitter.sdk.android:twitter:1.14.1@aar') {
         transitive = true;
     }
+    compile 'com.fasterxml.jackson.core:jackson-core:2.5.3'
+    compile 'com.fasterxml.jackson.core:jackson-annotations:2.5.3'
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.5.3'
 }
 apply plugin: 'com.google.gms.google-services'
