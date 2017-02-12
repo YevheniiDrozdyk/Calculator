@@ -10,6 +10,12 @@ import com.indev.calculator.mail.SendMail;
 
 import java.util.Random;
 
+/**
+ * UI class, that defines recovery password feature.
+ *
+ * @author E.Drozdyk
+ * @version 1.0 27 Aug 2016
+ */
 public class RecoveryPassActivity extends AppCompatActivity {
 
     private EditText editEmail;

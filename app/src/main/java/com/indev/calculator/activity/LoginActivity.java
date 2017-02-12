@@ -44,6 +44,12 @@ import java.util.Arrays;
 
 import io.fabric.sdk.android.Fabric;
 
+/**
+ * UI class, that defines logining into system.
+ *
+ * @author E.Drozdyk
+ * @version 1.0 27 Aug 2016
+ */
 public class LoginActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;

@@ -18,6 +18,12 @@ import com.indev.calculator.fragment.PairsFragment;
 import com.indev.calculator.fragment.PalindromeFragment;
 import com.indev.calculator.widget.SlidingTabLayout;
 
+/**
+ * UI class, that shows calculating features.
+ *
+ * @author E.Drozdyk
+ * @version 1.0 27 Aug 2016
+ */
 public class CalculatorActivity extends AppCompatActivity {
 
     private Toolbar toolbar;
@@ -108,5 +114,4 @@ public class CalculatorActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-
 }

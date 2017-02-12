@@ -2,9 +2,20 @@ package com.indev.calculator.model;
 
 import java.util.ArrayList;
 
-public class ListChildrenModel {
+/**
+ * Entity of children.
+ *
+ * @author E.Drozdyk
+ * @version 1.0 27 Aug 2016
+ */
+public class Children {
+
     private String mTitle;
     private ArrayList<EditTextChildValue> mArrayList = new ArrayList<>();
+
+    public Children() {
+
+    }
 
     public String getTitle() {
         return mTitle;

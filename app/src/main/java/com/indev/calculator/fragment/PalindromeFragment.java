@@ -12,6 +12,12 @@ import android.widget.TextView;
 import com.indev.calculator.R;
 import com.indev.calculator.math.Palindrome;
 
+/**
+ * UI fragment, that shows calculating of palindrome.
+ *
+ * @author E.Drozdyk
+ * @version 1.0 27 Aug 2016
+ */
 public class PalindromeFragment extends Fragment {
 
     private Button calculatePalindrome;

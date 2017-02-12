@@ -1,6 +1,7 @@
 package com.indev.calculator.model;
 
 public class EditTextChildValue {
+
     private String mValue;
 
     public EditTextChildValue(String value) {

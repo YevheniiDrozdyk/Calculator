@@ -2,6 +2,10 @@ package com.indev.calculator.math;
 
 import java.math.BigInteger;
 
+/**
+ * @author E.Drozdyk
+ * @version 1.0 27 Aug 2016
+ */
 public class Factorial {
     /**
      * To find the sum of the digits in the number, just call a method getAnswer()

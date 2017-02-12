@@ -12,6 +12,12 @@ import android.widget.TextView;
 import com.indev.calculator.R;
 import com.indev.calculator.math.Factorial;
 
+/**
+ * UI fragment, that shows calculating of factorial.
+ *
+ * @author E.Drozdyk
+ * @version 1.0 27 Aug 2016
+ */
 public class FactorialFragment extends Fragment {
 
     private Button calculateFact;

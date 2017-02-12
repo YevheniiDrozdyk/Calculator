@@ -15,11 +15,17 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.indev.calculator.R;
-import com.indev.calculator.adapter.ListChildrenAdapter;
-import com.indev.calculator.model.ListChildrenModel;
+import com.indev.calculator.adapter.ChildrenAdapter;
+import com.indev.calculator.model.Children;
 
 import java.util.ArrayList;
 
+/**
+ * UI class, that defines registration in system feature.
+ *
+ * @author E.Drozdyk
+ * @version 1.0 27 Aug 2016
+ */
 public class RegistrationActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
@@ -29,8 +35,8 @@ public class RegistrationActivity extends AppCompatActivity {
     private EditText mEditEmail;
     private EditText mEditPassword;
     private ListView mListView;
-    private ArrayList<ListChildrenModel> mListChildren;
-    private ListChildrenAdapter mAdapter;
+    private ArrayList<Children> mListChildren;
+    private ChildrenAdapter mAdapter;
     private int mItemPosition;
     private static final String TAG = "myLogs";
 
@@ -41,9 +47,9 @@ public class RegistrationActivity extends AppCompatActivity {
         setOnFabClick();
 
         mListChildren = new ArrayList<>();
-        mListChildren.add(new ListChildrenModel());
+        mListChildren.add(new Children());
         mListView = (ListView) findViewById(R.id.listChildren);
-        mAdapter = new ListChildrenAdapter(RegistrationActivity.this, mListChildren);
+        mAdapter = new ChildrenAdapter(RegistrationActivity.this, mListChildren);
         mListView.setAdapter(mAdapter);
     }
 
@@ -95,8 +101,8 @@ public class RegistrationActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mListChildren.add(new ListChildrenModel());
-                mAdapter = new ListChildrenAdapter(RegistrationActivity.this, mListChildren);
+                mListChildren.add(new Children());
+                mAdapter = new ChildrenAdapter(RegistrationActivity.this, mListChildren);
                 mListView.setAdapter(mAdapter);
                 mListView.setSelection(++mItemPosition);
             }

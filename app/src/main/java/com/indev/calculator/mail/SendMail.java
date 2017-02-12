@@ -20,7 +20,10 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
 /**
- * Class is extending AsyncTask because it is going to perform a networking operation
+ * Sends mail.
+ *
+ * @author E.Drozdyk
+ * @version 1.0 27 Aug 2016
  */
 public class SendMail extends AsyncTask<Void, Void, Void> {
 

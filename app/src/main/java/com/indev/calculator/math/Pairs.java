@@ -2,6 +2,10 @@ package com.indev.calculator.math;
 
 import java.util.ArrayList;
 
+/**
+ * @author E.Drozdyk
+ * @version 1.0 27 Aug 2016
+ */
 public class Pairs {
 
     private String mInputPairs;

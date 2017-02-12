@@ -6,8 +6,10 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 
 /**
  * To be used for adaptation view pager for activity with tabs
+ *
+ * @author E.Drozdyk
+ * @version 1.0 27 Aug 2016
  */
-
 public class ViewPagerAdapter extends FragmentStatePagerAdapter {
 
     private CharSequence[] namesOfTabs;

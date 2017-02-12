@@ -10,21 +10,27 @@ import android.widget.EditText;
 
 import com.indev.calculator.R;
 import com.indev.calculator.model.EditTextChildValue;
-import com.indev.calculator.model.ListChildrenModel;
+import com.indev.calculator.model.Children;
 
 import java.util.ArrayList;
 
-public class ListChildrenAdapter extends BaseAdapter {
+/**
+ * Children adapter.
+ *
+ * @author E.Drozdyk
+ * @version 1.0 27 Aug 2016
+ */
+public class ChildrenAdapter extends BaseAdapter {
 
     private LayoutInflater mLayoutInflater;
-    private ArrayList<ListChildrenModel> mListChildren;
+    private ArrayList<Children> mListChildren;
     private static final int INDEX_FIRST_NAME = 0;
     private static final int INDEX_BIRTHDAY = 1;
     private static final int INDEX_PHONE = 2;
     private static final int COUNT_OF_EDIT_TEXTS = 3;
     private int mLastPosition;
 
-    public ListChildrenAdapter(Context context, ArrayList<ListChildrenModel> listChildren) {
+    public ChildrenAdapter(Context context, ArrayList<Children> listChildren) {
         mLayoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         this.mListChildren = listChildren;
     }
